@@ -14,4 +14,13 @@ div.app {
 div.app div.content {
   padding: 25px;
 }
+
+div.app div.content h1.title {
+  margin: 0;
+  padding: 0;
+}
+
+div.app div.content p.data_element {
+  margin: 0;
+}
 /*# sourceMappingURL=styles.css.map */
