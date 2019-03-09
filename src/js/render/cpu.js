@@ -9,38 +9,53 @@ const getCPU_DATA = () => {
     titleCPU.className = "title"
     titleCPU.innerHTML = `CPU information`
     content.appendChild(titleCPU)
-    // console.log(typeof si.cpu().voltage);
+
     // Get CPU data
     si.cpu()
         .then(data => {
-            let arraysLike_data = toArrays(data)
-            arraysLike_data.forEach(element => { 
-                deepOutput(element, content)    
-            })
+            toArrays(data).forEach(element => deepOutput(element, content))
+            // Get CPU flags data
+            si.cpuFlags()
+                .then(data => stringfullDataOutput('CPU flags: ', data, content))
+                .catch(error => console.error(error))
+            // Get CPU cores speed data
+            si.cpuCurrentspeed()
+                .then(data => toArrays(data).forEach(element => deepOutput(element, content, 'Core speed')))
+                .catch(error => console.error(error))
         })
-        .catch(error => console.error(error));
+        .catch(error => console.error(error))
 
     // Function, what converts object data structure
     // to lots of small arrays [key, value]
     toArrays = obj => Object.entries(obj)
 
-    //  Function, what converts object data structure
+    // Function, what converts object data structure
     // to lots of small arrays [key, value]
-    deepOutput = (data_element, content) => {
+    deepOutput = (data_element, content, name) => {
         if(!(data_element[1].length === 0)) {
             if(typeof data_element[1] === 'object') {
-                let data = toArrays(data_element[1])
-                data.forEach(element => {
-                    deepOutput(element, content) 
-                });   
+                toArrays(data_element[1]).forEach(element => deepOutput(element, content, name));   
             } else {
+                const upperLeterName = (!name) 
+                    ? data_element[0].slice(0,1).toUpperCase() + data_element[0].slice(1) 
+                    : `${name} ${data_element[0]}`
                 let p = document.createElement("p")
-                const upperLeterName = data_element[0].slice(0,1).toUpperCase() + data_element[0].slice(1)
                 p.className = "data_element"
                 p.innerHTML = `${upperLeterName}: ${data_element[1]}`
                 content.appendChild(p)
             } 
         }       
+    }
+   
+    // Function, what converts string to string,
+    // what each word separated by comas.
+    // Print the result at the document
+    stringfullDataOutput = (name, arrayedStr, content) => {
+        const comaString = name + arrayedStr.split(' ').join(', ')
+        let p = document.createElement("p")
+        p.className = "data_element"
+        p.innerHTML = comaString
+        content.appendChild(p)
     }
 }
 
