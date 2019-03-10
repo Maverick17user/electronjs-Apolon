@@ -12,6 +12,11 @@ const getHDD_DATA = (arg) => {
     focusedWindow.webContents.send('getHDD', arg)  
 }
 
+const getDiscks_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getDiscks', arg)  
+}
+
 function createWindow () {
     let win = new BrowserWindow({ width: 1000, height: 750, show: false })
 
@@ -21,7 +26,8 @@ function createWindow () {
 
     win.on('show', () => {
         // getCPU_DATA()
-        getHDD_DATA()
+        // getHDD_DATA()
+        getDiscks_DATA()
     })
 
     win.loadFile('src/views/main.html')

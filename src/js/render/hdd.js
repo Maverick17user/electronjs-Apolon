@@ -5,7 +5,6 @@ const getHDD_DATA = () => {
     // // Get HDD data
     si.diskLayout()
         .then(data => toArrays(data[0]).forEach(element => deepOutput(element, content)))
-        // .then(data => console.log(toArrays(data[0])[0][1]) === false)
         .catch(error => console.error(error))
 }
 
