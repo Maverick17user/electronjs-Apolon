@@ -7,6 +7,11 @@ const getCPU_DATA = (arg) => {
     focusedWindow.webContents.send('getCPU', arg)  
 }
 
+const getHDD_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getHDD', arg)  
+}
+
 function createWindow () {
     let win = new BrowserWindow({ width: 1000, height: 750, show: false })
 
@@ -15,7 +20,8 @@ function createWindow () {
     })
 
     win.on('show', () => {
-        getCPU_DATA()
+        // getCPU_DATA()
+        getHDD_DATA()
     })
 
     win.loadFile('src/views/main.html')
