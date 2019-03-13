@@ -32,6 +32,11 @@ const getVideoCard_DATA = (arg) => {
     focusedWindow.webContents.send('getVideoCard', arg)  
 }
 
+const getNetworkAdapter_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getNetworkAdapter', arg)  
+}
+
 function createWindow () {
     let win = new BrowserWindow({ width: 1000, height: 750, show: false })
 
@@ -46,6 +51,7 @@ function createWindow () {
         // getDiscks_DATA()
         // getVideoCard_DATA()
         // getMotherBoard_DATA()
+        // getNetworkAdapter_DATA()
     })
 
     win.loadFile('src/views/main.html')
