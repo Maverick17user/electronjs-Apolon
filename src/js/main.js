@@ -22,6 +22,16 @@ const getBios_DATA = (arg) => {
     focusedWindow.webContents.send('getBios', arg)  
 }
 
+const getMotherBoard_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getMotherBoard', arg)  
+}
+
+const getVideoCard_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getVideoCard', arg)  
+}
+
 function createWindow () {
     let win = new BrowserWindow({ width: 1000, height: 750, show: false })
 
@@ -32,8 +42,10 @@ function createWindow () {
     win.on('show', () => {
         // getCPU_DATA()
         // getHDD_DATA()
-        getBios_DATA()
+        // getBios_DATA()
         // getDiscks_DATA()
+        // getVideoCard_DATA()
+        // getMotherBoard_DATA()
     })
 
     win.loadFile('src/views/main.html')
