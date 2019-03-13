@@ -17,6 +17,11 @@ const getDiscks_DATA = (arg) => {
     focusedWindow.webContents.send('getDiscks', arg)  
 }
 
+const getBios_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getBios', arg)  
+}
+
 function createWindow () {
     let win = new BrowserWindow({ width: 1000, height: 750, show: false })
 
@@ -27,7 +32,8 @@ function createWindow () {
     win.on('show', () => {
         // getCPU_DATA()
         // getHDD_DATA()
-        getDiscks_DATA()
+        getBios_DATA()
+        // getDiscks_DATA()
     })
 
     win.loadFile('src/views/main.html')
@@ -44,7 +50,7 @@ app.on('ready', createWindow)
 app.on('activate', () => {
     if (win === null) {
         createWindow()
-    }
+     }
 })
 
 app.on('window-all-closed', () => {
