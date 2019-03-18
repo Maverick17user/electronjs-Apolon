@@ -2,6 +2,11 @@ const { app, BrowserWindow } = require('electron')
 
 // Callbacks
 
+const listernKey = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('handleKeys', arg)  
+}
+
 const getCPU_DATA = (arg) => {
     const focusedWindow = BrowserWindow.getFocusedWindow()
     focusedWindow.webContents.send('getCPU', arg)  
@@ -22,6 +27,11 @@ const getProcesses_DATA = (arg) => {
     focusedWindow.webContents.send('getProcesses', arg)  
 }
 
+const getKeys_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getKeys', arg)  
+}
+
 function createWindow () {
     let win = new BrowserWindow({ width: 1000, height: 750, show: false })
 
@@ -30,10 +40,12 @@ function createWindow () {
     })
 
     win.on('show', () => {
+        listernKey()
         // getCPU_DATA()
         // getHDD_DATA()
         // getDiscks_DATA()
-        getProcesses_DATA()
+        // getProcesses_DATA()
+        getKeys_DATA()
     })
 
     win.loadFile('src/views/main.html')
