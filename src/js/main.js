@@ -27,6 +27,28 @@ const getProcesses_DATA = (arg) => {
     focusedWindow.webContents.send('getProcesses', arg)  
 }
 
+// ============= VUS's ==================
+
+const getBios_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getBios', arg)  
+}
+
+const getMotherBoard_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getMotherBoard', arg)  
+}
+
+const getVideoCard_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getVideoCard', arg)  
+}
+
+const getNetworkAdapter_DATA = (arg) => {
+    const focusedWindow = BrowserWindow.getFocusedWindow()
+    focusedWindow.webContents.send('getNetworkAdapter', arg)  
+}
+
 const getKeys_DATA = (arg) => {
     const focusedWindow = BrowserWindow.getFocusedWindow()
     focusedWindow.webContents.send('getKeys', arg)  
@@ -41,10 +63,18 @@ function createWindow () {
 
     win.on('show', () => {
         listernKey()
+
+        // --- MAX TASKS ---
         // getCPU_DATA()
         // getHDD_DATA()
         // getDiscks_DATA()
         // getProcesses_DATA()
+
+        // --- Vasilich TASKS ---
+        // getBios_DATA()
+        // getVideoCard_DATA()
+        // getMotherBoard_DATA()
+        // getNetworkAdapter_DATA()
         getKeys_DATA()
     })
 
