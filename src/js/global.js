@@ -10,7 +10,9 @@ const stringfullDataOutput = require_file_fromJS("callbacks/comaStr")
 const buildInitial_KeyData = require_file_fromJS("callbacks/initialKeys")
 const binarySearch = require_file_fromJS("callbacks/binarySearch")
 const printPressedKeysData = require_file_fromJS("callbacks/printKeys")
+const makeContentReadyToPrint = require_file_fromJS("callbacks/isReadyToPrint")
 
+const header = document.querySelector('header')
 const content = document.querySelector('div.content')
 
 // Initial keys's data structure [{},{},{}...]

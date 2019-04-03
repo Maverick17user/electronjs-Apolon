@@ -62,20 +62,20 @@ function createWindow () {
     })
 
     win.on('show', () => {
-        listernKey()
+        // listernKey()
 
         // --- MAX TASKS ---
-        // getCPU_DATA()
-        // getHDD_DATA()
-        // getDiscks_DATA()
-        // getProcesses_DATA()
+        getCPU_DATA()
+        getHDD_DATA()
+        getDiscks_DATA()
+        getProcesses_DATA()
 
         // --- Vasilich TASKS ---
-        // getBios_DATA()
-        // getVideoCard_DATA()
-        // getMotherBoard_DATA()
-        // getNetworkAdapter_DATA()
-        getKeys_DATA()
+        getBios_DATA()
+        getVideoCard_DATA()
+        getMotherBoard_DATA()
+        getNetworkAdapter_DATA()
+        // getKeys_DATA()
     })
 
     win.loadFile('src/views/main.html')

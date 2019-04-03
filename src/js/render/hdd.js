@@ -1,11 +1,15 @@
 // Callback function to get HDD data at the screen
 const getHDD_DATA = () => {
-    createTitle('HDD information', content)
+    document.querySelectorAll('li')[4].onclick = () => {
+        makeContentReadyToPrint()
 
-    // // Get HDD data
-    si.diskLayout()
-        .then(data => toArrays(data[0]).forEach(element => deepOutput(element, content)))
-        .catch(error => console.error(error))
+        createTitle('HDD information', header)
+
+        // // Get HDD data
+        si.diskLayout()
+            .then(data => toArrays(data[0]).forEach(element => deepOutput(element, content)))
+            .catch(error => console.error(error))
+    }
 }
 
 // Get a message by this render process to print data 

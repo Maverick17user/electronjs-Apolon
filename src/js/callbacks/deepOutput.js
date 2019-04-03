@@ -8,10 +8,10 @@ const deepOutput = (data_element, content, name) => {
             const upperLeterName = (!name) 
                 ? data_element[0].slice(0,1).toUpperCase() + data_element[0].slice(1) 
                 : `${name} ${data_element[0]}`
-            let p = document.createElement("p")
-            p.className = "data_element"
-            p.innerHTML = `${upperLeterName}: ${data_element[1]}`
-            content.appendChild(p)
+            let span = document.createElement("span")
+            span.className = "data_element"
+            span.innerHTML = `${upperLeterName}: ${data_element[1]}`
+            content.appendChild(span)
         } 
     }       
 }

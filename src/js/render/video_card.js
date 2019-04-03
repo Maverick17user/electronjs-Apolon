@@ -1,11 +1,15 @@
 // Callback function to get VideoCard data at the screen
 const getVideoCard_DATA = () => {
-    createTitle('VideoCard information', content)
+    document.querySelectorAll('li')[3].onclick = () => {
+        makeContentReadyToPrint()
 
-    // // Get VideoCard data
-    si.graphics()
-        .then(data => toArrays(data).forEach(element => deepOutput(element, content)))
-        .catch(error => console.error(error))
+        createTitle('VideoCard information', header)
+
+        // // Get VideoCard data
+        si.graphics()
+            .then(data => toArrays(data).forEach(element => deepOutput(element, content)))
+            .catch(error => console.error(error))
+    }
 }
 
 // Get a message by this render process to print data 
