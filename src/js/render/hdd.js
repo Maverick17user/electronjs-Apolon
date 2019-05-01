@@ -2,12 +2,13 @@
 const getHDD_DATA = () => {
     document.querySelectorAll('li')[4].onclick = () => {
         makeContentReadyToPrint()
-
+        loading('start')
         createTitle('HDD information', header)
 
         // // Get HDD data
         si.diskLayout()
             .then(data => toArrays(data[0]).forEach(element => deepOutput(element, content)))
+                .then(() => loading('stop'))
             .catch(error => console.error(error))
     }
 }

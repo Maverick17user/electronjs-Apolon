@@ -5,8 +5,8 @@ const printPressedKeysData = () => {
     content.appendChild(keysData_wrapper)
     for (let key of keys) {
         if (key.press_count > 0) {
-            let unit = document.createElement('div.keyElem')
-            unit.innerHTML = `<span>${String.fromCharCode(key.code)}(code:${key.code}) - ${key.press_count} clicked</span><br>`
+            let unit = document.createElement('div')
+            unit.innerHTML = `<span class="keyUnit">${String.fromCharCode(key.code)}(code:${key.code}) - ${key.press_count} clicked</span>`
             keysData_wrapper.appendChild(unit)
         }
     }

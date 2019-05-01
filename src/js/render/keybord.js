@@ -6,12 +6,10 @@ const getKeys_DATA = () => {
         createTitle('Pressed keys information', header)
 
         // Get pressed keys data
-        document.querySelector('button').addEventListener('click', e => {
-            if (document.body.contains(document.querySelector('div.keysData'))) {
-                document.querySelector('div.keysData').remove()
-            }
-            printPressedKeysData()
-        })
+        if (document.body.contains(document.querySelector('div.keysData'))) {
+            document.querySelector('div.keysData').remove()
+        }
+        printPressedKeysData()
     }
 }
 

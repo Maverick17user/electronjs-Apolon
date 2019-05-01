@@ -2,6 +2,7 @@
 const getMotherBoard_DATA = () => {
     document.querySelectorAll('li')[2].onclick = () => {
         makeContentReadyToPrint()
+        loading('start')
 
         createTitle('MotherBoard information', header)
 
@@ -12,6 +13,7 @@ const getMotherBoard_DATA = () => {
                 // Get chassis data
                 si.chassis()
                     .then(data => toArrays(data).forEach(element => deepOutput(element, content)))
+                        .then(() => loading('stop'))
                     .catch(error => console.error(error))
             })
             .catch(error => console.error(error))

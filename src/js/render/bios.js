@@ -2,6 +2,7 @@
 const getBios_DATA = () => {
     document.querySelectorAll('li')[1].onclick = () => {
         makeContentReadyToPrint()
+        loading('start')
 
         createTitle('Bios information', header)
 
@@ -12,6 +13,7 @@ const getBios_DATA = () => {
                 // Get system information data
                 si.system()
                     .then(data => toArrays(data).forEach(element => deepOutput(element, content)))
+                        .then(() => loading('stop'))
                     .catch(error => console.error(error))
             })
             .catch(error => console.error(error))

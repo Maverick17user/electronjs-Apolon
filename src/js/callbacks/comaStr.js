@@ -2,10 +2,9 @@
 // what each word separated by comas.
 // Print the result at the document
 const stringfullDataOutput = (name, arrayedStr, content) => {
-    const comaString = name + arrayedStr.split(' ').join(', ')
     let span = document.createElement("span")
     span.className = "data_element"
-    span.innerHTML = comaString
+    span.innerHTML = `<b>${name}:</b> <span style="color: #1CA8DD">${arrayedStr.split(' ').join(', ')}</span>`
     content.appendChild(span)
 }
 

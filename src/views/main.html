@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Apolon</title>
     <link rel="stylesheet" href="../assets/styles/styles.css">
+    <link rel="stylesheet" href="../assets/styles/loader.css">
 </head>
+
 <body>
     <div class="conteiner">
         <div class="navigation">
@@ -58,9 +61,16 @@
         <div class="content-space">
             <header></header>
             <!-- <button>Keys</button> -->
-            <div class="content"></div>
+            <div class="content">
+                <!-- <div class="graph-wrapper">
+                    <canvas id="cpu_cores_speed"></canvas>
+                </div> -->
+            </div>
         </div>
     </div>
+    <!-- Libs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
     <script src="../js/global.js"></script>
     <script src="../js/render/listernKey.js"></script>
     <script src="../js/render/cpu.js"></script>
@@ -74,4 +84,5 @@
     <script src="../js/render/network_adapter.js"></script>
     <script src="../js/render/keybord.js"></script>
 </body>
+
 </html>

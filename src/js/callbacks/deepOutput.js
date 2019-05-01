@@ -8,10 +8,17 @@ const deepOutput = (data_element, content, name) => {
             const upperLeterName = (!name) 
                 ? data_element[0].slice(0,1).toUpperCase() + data_element[0].slice(1) 
                 : `${name} ${data_element[0]}`
-            let span = document.createElement("span")
-            span.className = "data_element"
-            span.innerHTML = `${upperLeterName}: ${data_element[1]}`
-            content.appendChild(span)
+            switch (name) {
+                case 'CPU':
+                    outputCoreSpeedBeauty(upperLeterName, data_element[1])
+                    break;
+                default:
+                    let span = document.createElement("span")
+                    span.className = "data_element"
+                    span.innerHTML = `<b>${upperLeterName}:</b><span style="color: #1CA8DD">${data_element[1]}</span>`
+                    content.appendChild(span)
+                    break;
+            }
         } 
     }       
 }

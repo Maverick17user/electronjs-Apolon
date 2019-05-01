@@ -2,12 +2,14 @@
 const getDiscks_DATA = () => {
     document.querySelectorAll('li')[4].onclick = () => {
         makeContentReadyToPrint()
+        loading('start')
 
         createTitle('HDD Blocks information', header)
 
         // // Get HDD blocks data
         si.blockDevices()
             .then(data => data.forEach(obj => toArrays(obj).forEach(element => deepOutput(element, content))))
+                .then(() => loading('stop'))
             .catch(error => console.error(error))
     }
 }

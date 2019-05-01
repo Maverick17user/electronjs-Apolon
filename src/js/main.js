@@ -55,14 +55,14 @@ const getKeys_DATA = (arg) => {
 }
 
 function createWindow () {
-    let win = new BrowserWindow({ width: 1000, height: 750, show: false })
-
+    let win = new BrowserWindow({ width: 99999, height: 99999, show: false })
     win.once('ready-to-show', () => {
         win.show()
+        win.maximize()
     })
 
     win.on('show', () => {
-        // listernKey()
+        listernKey()
 
         // --- MAX TASKS ---
         getCPU_DATA()
@@ -70,12 +70,12 @@ function createWindow () {
         getDiscks_DATA()
         getProcesses_DATA()
 
-        // --- Vasilich TASKS ---
+        // --- Vasiliy TASKS ---
         getBios_DATA()
         getVideoCard_DATA()
         getMotherBoard_DATA()
         getNetworkAdapter_DATA()
-        // getKeys_DATA()
+        getKeys_DATA()
     })
 
     win.loadFile('src/views/main.html')

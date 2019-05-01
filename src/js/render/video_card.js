@@ -2,12 +2,14 @@
 const getVideoCard_DATA = () => {
     document.querySelectorAll('li')[3].onclick = () => {
         makeContentReadyToPrint()
+        loading('start')
 
         createTitle('VideoCard information', header)
 
         // // Get VideoCard data
         si.graphics()
             .then(data => toArrays(data).forEach(element => deepOutput(element, content)))
+                .then(() => loading('stop'))
             .catch(error => console.error(error))
     }
 }

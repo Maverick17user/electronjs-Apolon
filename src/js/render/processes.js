@@ -2,12 +2,21 @@
 const getProcesses_DATA = () => {
     document.querySelectorAll('li')[7].onclick = () => {
         makeContentReadyToPrint()
+        loading('start')
 
         createTitle('Active processes information', header)
 
         // Get processes data
         si.processes()
-            .then(data => toArrays(data).forEach(element => deepOutput(element, content)))
+            .then(data => {
+                const processes = data.list
+
+                delete data.list
+
+                toArrays(data).forEach(element => deepOutput(element, content))
+                outputProcessDataBeauty(processes)
+            })
+                .then(() => loading('stop'))
             .catch(error => console.error(error))
     }
 }

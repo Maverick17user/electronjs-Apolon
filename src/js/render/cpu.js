@@ -4,7 +4,8 @@ const getCPU_DATA = () => {
         makeContentReadyToPrint()
 
         createTitle('CPU information', header)
-        
+        loading('start')
+
         // Get CPU data
         si.cpu()
             .then(data => {
@@ -15,10 +16,11 @@ const getCPU_DATA = () => {
                     .catch(error => console.error(error))
                 // Get CPU cores speed data
                 si.cpuCurrentspeed()
-                    .then(data => toArrays(data).forEach(element => deepOutput(element, content, 'Core speed')))
+                    .then(data => toArrays(data).forEach(element => deepOutput(element, content, 'CPU')))
+                        .then(() => loading('stop'))
                     .catch(error => console.error(error))
             })
-            .catch(error => console.error(error))
+        .catch(error => console.error(error))
     }
 }
 
