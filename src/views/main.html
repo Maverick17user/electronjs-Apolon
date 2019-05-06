@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Apolon</title>
-    <link rel="stylesheet" href="../assets/styles/styles.css">
-    <link rel="stylesheet" href="../assets/styles/loader.css">
-</head>
-
-<body>
-    <div class="conteiner">
-        <div class="navigation">
-            <div class="logo">
-                <img src="../assets/img/performance.png">
-                <h1>Appolon</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        <img src="../assets/img/processor.png">
-                        <span>Cpu</span>
-                    </li>
-                    <li>
-                        <img src="../assets/img/gear.png">
-                        <span>Bios</span>
-                    </li>
-                    <li>
-                        <img src="../assets/img/motherboard.png">
-                        <span>Motherboard</span>
-                    </li>
-                    <li>
-                        <img src="../assets/img/graphics-card.png">
-                        <span>Gpu</span>
-                    </li>
-                    <li>
-                        <img src="../assets/img/hdd.png">
-                        <span>Hdd</span>
-                    </li>
-                    <li>
-                        <img src="../assets/img/icon.png">
-                        <span>Keyboard</span>
-                    </li>
-                    <li>
-                        <img src="../assets/img/network-interface-card.png">
-                        <span>Network card</span>
-                    </li>
-                    <li>
-                        <img src="../assets/img/process.jpg">
-                        <span>Processes</span>
-                    </li>
-                    <li>
-                        <img src="../assets/img/computer.png">
-                        <span>All</span>
-                    </li>
-                </ul>
-            </nav>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Apolon</title>
+        <link rel="stylesheet" href="../assets/styles/styles.css">
+        <link rel="stylesheet" href="../assets/styles/preloader.css">
+        <link rel="stylesheet" href="../assets/styles/loader.css">
+    </head>
+    <body>
+        <!-- ====== Preloader ======  -->
+        <div id="preloader">
+            <div id="loader"></div>
+            <h2 id="labelH2">Loading ...</h2>
         </div>
-        <div class="content-space">
-            <header></header>
-            <!-- <button>Keys</button> -->
-            <div class="content">
-                <!-- <div class="graph-wrapper">
-                    <canvas id="cpu_cores_speed"></canvas>
-                </div> -->
+        <!-- ====== Preloader ======  -->
+        <div class="conteiner">
+            <div class="navigation">
+                <div class="logo">
+                    <img src="../assets/img/performance.png">
+                    <h1>Appolon</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <img src="../assets/img/processor.png">
+                            <span>Cpu</span>
+                        </li>
+                        <li>
+                            <img src="../assets/img/gear.png">
+                            <span>Bios</span>
+                        </li>
+                        <li>
+                            <img src="../assets/img/motherboard.png">
+                            <span>Motherboard</span>
+                        </li>
+                        <li>
+                            <img src="../assets/img/graphics-card.png">
+                            <span>Gpu</span>
+                        </li>
+                        <li>
+                            <img src="../assets/img/hdd.png">
+                            <span>Hdd</span>
+                        </li>
+                        <li>
+                            <img src="../assets/img/icon.png">
+                            <span>Keyboard</span>
+                        </li>
+                        <li>
+                            <img src="../assets/img/network-interface-card.png">
+                            <span>Network card</span>
+                        </li>
+                        <li>
+                            <img src="../assets/img/process.jpg">
+                            <span>Processes</span>
+                        </li>
+                        <li>
+                            <img src="../assets/img/computer.png">
+                            <span>All</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="content-space">
+                <header></header>
+                <!-- <button>Keys</button> -->
+                <div class="content">
+                    <!-- <div class="graph-wrapper">
+                        <canvas id="cpu_cores_speed"></canvas>
+                    </div> -->
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Libs -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
-    <script src="../js/global.js"></script>
-    <script src="../js/render/listernKey.js"></script>
-    <script src="../js/render/cpu.js"></script>
-    <script src="../js/render/hdd.js"></script>
-    <script src="../js/render/disks.js"></script>
-    <script src="../js/render/processes.js"></script>
-    <!-- VUS's -->
-    <script src="../js/render/bios.js"></script>
-    <script src="../js/render/mother_board.js"></script>
-    <script src="../js/render/video_card.js"></script>
-    <script src="../js/render/network_adapter.js"></script>
-    <script src="../js/render/keybord.js"></script>
-</body>
-
+        <!-- Libs -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script src="../js/preloader.js"></script>
+        <script src="../js/global.js"></script>
+        <script src="../js/render/listernKey.js"></script>
+        <script src="../js/render/cpu.js"></script>
+        <script src="../js/render/hdd.js"></script>
+        <script src="../js/render/disks.js"></script>
+        <script src="../js/render/processes.js"></script>
+        <script src="../js/render/bios.js"></script>
+        <script src="../js/render/mother_board.js"></script>
+        <script src="../js/render/video_card.js"></script>
+        <script src="../js/render/network_adapter.js"></script>
+        <script src="../js/render/keybord.js"></script>
+    </body>
 </html>

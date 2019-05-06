@@ -55,10 +55,10 @@ const getKeys_DATA = (arg) => {
 }
 
 function createWindow () {
-    let win = new BrowserWindow({ width: 99999, height: 99999, show: false })
+    let win = new BrowserWindow({ width: 1000, height: 1000, show: false })
     win.once('ready-to-show', () => {
         win.show()
-        win.maximize()
+        // win.maximize()
     })
 
     win.on('show', () => {
@@ -80,7 +80,7 @@ function createWindow () {
 
     win.loadFile('src/views/main.html')
 
-    win.webContents.openDevTools()
+    // win.webContents.openDevTools()
 
     win.on('closed', () => {
       win = null

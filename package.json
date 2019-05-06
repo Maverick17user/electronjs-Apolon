@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Maverick17user/electronjs-Apolon#readme",
   "dependencies": {
     "electron": "^4.0.7",
+    "jquery": "^3.4.1",
     "systeminformation": "^4.0.15"
   }
 }

@@ -105,9 +105,41 @@ const outputCoreSpeedBeauty = (upperLeterName, data_element) => {
 }
 
 const outputProcessDataBeauty = allProcesses => {
-    toArrays(allProcesses).forEach(element => deepOutput(element, content)) 
-    // let span = document.createElement("span")
-    // span.className = "data_element"
-    // span.innerHTML = `<b>${upperLeterName}:</b><span style="color: #1CA8DD">${data_element}</span>`
-    // content.appendChild(span)
+
+    const minifyProcessesData = allProcesses.map((process, i) => {
+        return {
+            id: i+1,
+            name: process.name,
+            pcpu: process.pcpu,
+            pid: process.pid,
+            parentPid: process.parentPid,
+            started: process.started
+        }
+    })
+    
+    minifyProcessesData.forEach(process => {
+
+        const processEntries = toArrays(process)
+
+        let section = document.createElement("section")
+        section.className = "process_section"
+
+        processEntries.forEach(entrie => {
+            const upperLeterName = entrie[0].slice(0,1).toUpperCase() + entrie[0].slice(1)
+
+            let span = document.createElement("span")
+            span.className = "data_element"
+            span.innerHTML = `<b>${upperLeterName}:</b><span style="color: #1CA8DD">${entrie[1]}</span>`
+            section.appendChild(span)
+        })
+
+        content.appendChild(section)
+
+    });
+
+
+    // minifyProcessesData.forEach(element => {
+    //     console.log(element)
+    //     deepOutput(element, content)
+    // })
 }
