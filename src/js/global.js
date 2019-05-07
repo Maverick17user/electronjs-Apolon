@@ -136,10 +136,8 @@ const outputProcessDataBeauty = allProcesses => {
         content.appendChild(section)
 
     });
-
-
-    // minifyProcessesData.forEach(element => {
-    //     console.log(element)
-    //     deepOutput(element, content)
-    // })
 }
+
+const dataForDB = {}
+// setTimeout(()=>console.log(dataForDB), 10000)
+// console.log(dataForDB);

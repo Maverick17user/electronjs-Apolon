@@ -4,7 +4,6 @@ const listernKey = () => {
         const keyCode = event.keyCode
         let keyObj = binarySearch(keyCode, keys[0].code, keys[keys.length-1].code)
         keyObj.press_count += 1
-        console.log(keyObj.press_count);
     })
 }
 

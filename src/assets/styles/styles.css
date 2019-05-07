@@ -134,6 +134,67 @@ div.conteiner div.content-space header h5 {
   letter-spacing: 0.8px;
 }
 
+div.conteiner div.content-space div.content section.welc-wrapper {
+  position: absolute;
+  top: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  left: 40%;
+  background: radial-gradient(25% 35%, #C5E2E7, #2F323A);
+}
+
+div.conteiner div.content-space div.content section.welc-wrapper div.main {
+  text-align: center;
+  text-shadow: 0 0 1px black;
+}
+
+div.conteiner div.content-space div.content section.welc-wrapper div.main .welc {
+  color: whitesmoke;
+}
+
+div.conteiner div.content-space div.content section.welc-wrapper div.main h1.welc {
+  font-size: 2em;
+}
+
+div.conteiner div.content-space div.content section.welc-wrapper div.main p.welc {
+  font-size: 1.5em;
+}
+
+div.conteiner div.content-space div.content section.welc-wrapper div.main p.welc span {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 100;
+}
+
+div.conteiner div.content-space div.content section.welc-wrapper div.main small.welc {
+  display: block;
+  margin-top: 50px;
+}
+
+div.conteiner div.content-space div.content section.welc-wrapper div.main span.name {
+  font-weight: 600;
+}
+
+div.conteiner div.content-space div.content section.welc-wrapper div.year {
+  text-align: center;
+  margin-top: 100px;
+}
+
+div.conteiner div.content-space div.content section.welc-wrapper div.year span {
+  color: gray;
+}
+
 div.conteiner div.content-space div.content span.data_element {
   margin-bottom: 5px;
   display: block;
@@ -177,5 +238,29 @@ div.conteiner div.content-space div.content section.process_section {
   outline: 2px solid #262930;
   margin-top: 25px;
   background: #32353D;
+}
+
+div.conteiner div.content-space div.content section.addDoc, div.conteiner div.content-space div.content section.updateDoc {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.conteiner div.content-space div.content section.addDoc p, div.conteiner div.content-space div.content section.updateDoc p {
+  margin-top: 25%;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+div.conteiner div.content-space div.content section.addDoc {
+  color: #1CA8DD;
+}
+
+div.conteiner div.content-space div.content section.updateDoc {
+  color: #FFDD68;
 }
 /*# sourceMappingURL=styles.css.map */
