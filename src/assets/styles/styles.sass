@@ -1,13 +1,165 @@
 body
     margin: 0
     padding: 0
-    font-size: 1.2em
-    background-color: lightblue
-    color: white
-    
-// Main window styles
-div.app
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+    height: 100%
+div.conteiner
     width: 100%
     height: 100%
-    div.content
+    display: flex
+    div.navigation
+        min-width: 200px
+        background: #F8F8F8
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        height: 100vh
+        position: sticky
+        top: 0
+        div.logo
+            padding-left: 25px
+            padding-bottom: 15px
+            padding-top: 15px
+            display: flex
+            align-items: center
+            background: #262930
+            img
+                display: inline-block
+            h1
+                display: inline-block
+                margin: 0
+                font-size: 1.5em
+                font-weight: 100
+                margin-left: 8px
+                color: #1CA8DD
+        nav
+            ul
+                width: 100%
+                height: 100%
+                margin: 0
+                padding: 0
+                display: flex
+                flex-direction: column
+                li
+                    list-style-type: none
+                    display: flex
+                    align-items: center
+                    opacity: 0.4
+                    padding: 15px 0px 15px 25px
+                    border-bottom: 1px solid black
+                    &:hover
+                        opacity: 1
+                        cursor: pointer 
+                    img
+                        display: inline-block
+                        width: 24px
+                    span
+                        margin-left: 5px
+                        font-size: 1.1em
+                        font-weight: 600
+                        font-family: 'century gothic'
+    div.content-space
+        width: 100%
+        background: whitesmoke
+        background: #2F323A
         padding: 25px
+        padding-top: 0
+        box-sizing: border-box
+        header
+            width: calc(100% + 25px)
+            margin-left: -25px
+            padding-bottom: 15px
+            padding-top: 13px
+            position: sticky
+            top: 0
+            z-index: 99
+            background: #2F323A
+            padding-left: 25px
+            h5
+                color: white  
+                margin: 0 
+                line-height: 34px
+                font-size: 1.2em
+                font-weight: 600
+                letter-spacing: 0.8px
+        div.content
+            section.welc-wrapper
+                position: absolute
+                top: 35%
+                display: flex
+                align-items: center
+                justify-content: space-between
+                flex-direction: column
+                left: 40%
+                background: radial-gradient(25% 35%, #C5E2E7, #2F323A)
+                div.main
+                    text-align: center
+                    text-shadow: 0 0 1px black
+                    .welc
+                        color: whitesmoke
+                    h1.welc
+                        font-size: 2em
+                    p.welc
+                        font-size: 1.5em
+                        span
+                            display: block
+                            margin-bottom: 10px
+                            font-weight: 100
+                    small.welc
+                        display: block
+                        margin-top: 50px
+                    span.name
+                        font-weight: 600
+                div.year
+                    text-align: center
+                    margin-top: 100px
+                    span
+                        color: gray
+            span.data_element
+                margin-bottom: 5px
+                display: block
+                color: #9FA6B7
+                font-size: 1.1em
+                max-width: 500px
+                span
+                    margin-left: 5px
+            div.graph-wrapper
+                position: absolute
+                right: 25px
+                top: 64px
+                canvas
+                    margin-bottom: 50px
+                    &:hover
+                        cursor: pointer
+            div.keysData
+                width: 100%
+                span.keyUnit
+                    color: #1CA8DD
+                    display: block
+                    margin-bottom: 5px
+                    font-weight: bold
+                    font-size: 1.1em
+            section.process_section
+                padding: 10px
+                outline: 2px solid #262930
+                margin-top: 25px
+                background: #32353D
+            section.addDoc, section.updateDoc
+                width: 100%
+                display: flex
+                justify-content: center
+                p
+                    margin-top: 25%
+                    font-weight: 600
+                    font-size: 1.5em
+            section.addDoc
+                color: #1CA8DD
+            section.updateDoc
+                color: #FFDD68
+            
+
+                
+
+
+
+
