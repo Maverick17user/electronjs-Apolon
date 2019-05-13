@@ -1,16 +1,19 @@
-// Callback function to get NetworkAdapter data at the screen
+// Callback function to get network interfaces data at the screen
 const getNetworkAdapter_DATA = () => {
     document.querySelectorAll('li')[6].onclick = () => {
         makeContentReadyToPrint()
         loading('start')
 
-        createTitle('NetworkAdapter information', header)
-
-        // // Get NetworkAdapter data
+        // Get Network interfaces data
+        createTitle('Network interfaces', header)
         si.networkInterfaces()
-            .then(data => toArrays(data[0]).forEach(element => deepOutput(element, content)))
-                .then(() => loading('stop'))
-            .catch(error => console.error(error))
+            .then(data => {
+                console.log(data)
+                data.forEach(unit => {
+                    toArrays(unit).forEach(element => deepOutput(element, content))
+                });
+            })
+            .then(() => loading('stop'))
     }
 }
 

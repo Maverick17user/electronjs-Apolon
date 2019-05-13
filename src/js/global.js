@@ -1,5 +1,6 @@
 const { ipcRenderer } = require('electron')
 const si = require('systeminformation')
+const os = require('os')
 
 const require_file_fromJS = file => require("modules/../../src/js/" + file)
 
@@ -15,6 +16,12 @@ const loading = require_file_fromJS("callbacks/loading")
 
 const header = document.querySelector('header')
 const content = document.querySelector('div.content')
+
+const dataForDB = {}
+
+let currentLeftMouseCount = 0;
+let currentRightMouseCount = 0;
+let currentAllMouseCount = 0;
 
 // Initial keys's data structure [{},{},{}...]
 let keys = buildInitial_KeyData()
@@ -137,7 +144,3 @@ const outputProcessDataBeauty = allProcesses => {
 
     });
 }
-
-const dataForDB = {}
-// setTimeout(()=>console.log(dataForDB), 10000)
-// console.log(dataForDB);
