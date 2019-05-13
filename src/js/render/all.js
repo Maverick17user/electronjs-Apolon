@@ -1,15 +1,14 @@
 const ipc = require('electron').ipcRenderer;
-const os = require('os')
 
 // Callback function to post full hardware data into remote db
 const postFullHardwareDataInDB = () => {
-    document.querySelectorAll('li')[8].onclick = () => {
+    document.querySelectorAll('li')[9].onclick = () => {
         makeContentReadyToPrint()
 
         loading('start')
 
         createTitle('Full hardware data • Post into remote data base', header)
-
+        // os.userInfo()
         let compareData = new Promise(async (resolve, reject) => {
             Object.assign(dataForDB, {user: os.hostname() + '-' + os.userInfo().username})
             await si.cpu().then(data => Object.assign(dataForDB, {cpu: data}))
@@ -18,10 +17,23 @@ const postFullHardwareDataInDB = () => {
             await si.graphics().then(data => Object.assign(dataForDB, {gpu: data}))
             await si.diskLayout().then(data => Object.assign(dataForDB, {hdd: data}))
             await si.blockDevices().then(data => Object.assign(dataForDB, {hddBlocks: data}))
-            Object.assign(dataForDB, {pressedKeys: keys})
+            await si.graphics().then(data => Object.assign(dataForDB, {devices: {
+                pressedKeys: keys, 
+                packedMouseData: {
+                    currentLeftMouseCount,
+                    currentRightMouseCount,
+                    currentAllMouseCount
+                },
+                graphicsDevices: data
+            }}))
             await si.networkInterfaces().then(data => Object.assign(dataForDB, {networkInterface: data}))
             await si.processes().then(data => Object.assign(dataForDB, {processes: data}))
-            
+            await si.users().then(data => Object.assign(dataForDB, {timeANDusers: {
+                allOnlineUsersData: data,
+                os_startedAt: uptime().toLocaleString(),
+                uptimeInSecondsForCerUser: os.uptime() + ' sec.'
+            }}))
+
             resolve(dataForDB)
         });
 

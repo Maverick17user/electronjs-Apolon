@@ -30,18 +30,22 @@ const HardwareData_Schema = new Schema({
         type: Array,
         required: true
     },
-    networkInterface: {
+    devices: {
         type: Object,
         required: true
     },
-    pressedKeys: {
-        type: Array,
+    networkInterface: {
+        type: Object,
         required: true
     },
     processes: {
         type: Object,
         required: true
     },
+    timeANDusers: {
+        type: Object,
+        required: true
+    }
 });
 
 const HardwareData = mongoose.model('hardData', HardwareData_Schema);

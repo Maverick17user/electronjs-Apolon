@@ -4,19 +4,27 @@ const getDiscks_DATA = () => {
         makeContentReadyToPrint()
         loading('start')
 
-        createTitle('HDD && HDD Blocks information', header)
+        createTitle('HDD && HDD Blocks', header)
 
         // Get HDD data
-        si.diskLayout()
-            .then(data => toArrays(data[0]).forEach(element => deepOutput(element, content)))
-                .then(() => {
-                    // Get HDD blocks data
-                    si.blockDevices()
-                    .then(data => data.forEach(obj => toArrays(obj).forEach(element => deepOutput(element, content))))
-                        .then(() => loading('stop'))
-                    .catch(error => console.error(error))
+        si.diskLayout() 
+            .then(data => {
+                createTitle('HDD data', content, 'hr')
+                data.forEach(element => {
+                    toArrays(element).forEach(element => deepOutput(element, content))
                 })
-            .catch(error => console.error(error))
+            })
+            .then(() => {
+                // Get HDD blocks data
+                si.blockDevices()
+                    .then(data => {
+                        createTitle('HDD Blocks', content, 'hr')
+                        data.forEach(obj => {
+                            toArrays(obj).forEach(element => deepOutput(element, content))
+                        })
+                    })
+            })
+            .then(() => loading('stop'))
     }
 }
 
